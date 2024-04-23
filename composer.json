@@ -1,12 +1,12 @@
 {
-    "name": "infinety-es/nova-filemanager",
-    "description": "Filemanager tool for Laravel Nova",
+    "name": "jardin-de-vicky/nova-filemanager",
+    "description": "Filemanager tool for Laravel Nova 4",
     "keywords": [
         "laravel",
         "nova",
         "filemanager"
     ],
-    "homepage": "https://github.com/InfinetyEs/nova-filemanager",
+    "homepage": "https://github.com/jardin-de-vicky/nova-filemanager",
     "license": "MIT",
     "authors": [
         {
@@ -18,30 +18,42 @@
             "name": "InfinetyEs",
             "email": "apps@infinety.es",
             "role": "Maintainer"
+        },
+        {
+            "name": "Mathias Beaulieu-Duncan",
+            "email": "mathias@openharbor.io",
+            "role": "Maintainer"
         }
     ],
     "require": {
-        "php": ">=7.1.0",
+        "php": "^8.0|^7.3",
+        "illuminate/support": "^7.0|^8.0|^9.0|^10.0|^11.0",
         "laravel/nova": "^4.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.6",
-        "phpunit/phpunit": "7.1"
+        "orchestra/testbench": "^5.0|^6.0|^7.0",
+        "phpunit/phpunit": "9.3"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "Infinety\\Filemanager\\": "src/"
+            "JardinDeVicky\\Filemanager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Infinety\\Filemanager\\Tests\\": "tests"
+            "JardinDeVicky\\Filemanager\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Infinety\\Filemanager\\FilemanagerServiceProvider"
+                "JardinDeVicky\\Filemanager\\FilemanagerServiceProvider"
             ]
         }
     },

@@ -18,173 +18,175 @@
         </nav>
 
         <transition name="fade">
-            <template v-if="uploadingFiles">
-                <div class="px-2 overflow-y-auto files">
-                    <div class="drop-files flex flex-wrap items-center border-2 border-primary border-dashed -mx-2">
-                        <div class="w-full text-lg text-center my-4">
-                            {{ __('Drop your files here!') }}
+            <div>
+                <template v-if="uploadingFiles">
+                    <div class="px-2 overflow-y-auto files">
+                        <div class="drop-files flex flex-wrap items-center border-2 border-primary border-dashed -mx-2">
+                            <div class="w-full text-lg text-center my-4">
+                                {{ __('Drop your files here!') }}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </template>
+                </template>
 
-            <div v-else class="px-2 overflow-y-auto files">
-                <div class="flex flex-wrap -mx-2">
-                    <template v-if="files.error">
-                        <div class="w-full text-lg text-center my-4">
-                            {{ __('You don\'t have permissions to view this folder') }}
-                        </div>
-                    </template>
-
-                    <template v-if="loading">
-                        <div class="w-full text-lg text-center my-4">
-                            <loading />
-                        </div>
-                    </template>
-
-                    <template v-else-if="!files.length">
-                        <div class="w-full text-lg text-center my-4">
-                            {{ __(`No ${filter || 'files or folders'} in current directory`) }}<br><br>
-                            <button v-if="buttons.delete_folder && !filter" class="btn btn-default btn-danger" @click="removeDirectory">
-                                {{ __('Remove directory') }}
-                            </button>
-                        </div>
-                    </template>
-
-                    <template v-if="!files.error">
-                        <template v-if="view == 'grid'">
-                            <template v-if="!files.error">
-                                <template v-if="parent.id">
-                                    <div :class="filemanagerClass" :key="parent.id" >
-                                        <Folder v-drag-and-drop:folder :ref="'folder_' + parent.id" :file="parent" :data-key="parent.id" class="h-40 folder-item" :class="{'loading': loadingInfo}" v-on:goToFolderEvent="goToFolder" />
-                                    </div>
-                                </template>
-
-                                <template v-for="file in filteredFiles">
-                                    <div :class="filemanagerClass" :key="file.id" >
-                                        <template v-if="file.type == 'file'">
-                                            <ImageLoader
-                                                v-drag-and-drop:file
-                                                :ref="'file_' + file.id"
-                                                :file="file"
-                                                :data-key="file.id"
-                                                :multi-selecting="multiSelecting"
-                                                :selected-files="selectedFiles"
-                                                :delete-permission="buttons.delete_file"
-                                                :rename-permission="buttons.rename_file"
-                                                class="h-40 file-item"
-                                                @missing="(value) => missing = value"
-                                                v-on:showInfo="showInfo"
-                                                v-on:rename="rename"
-                                                v-on:delete="deleteData"
-                                                v-on:select="select"
-                                            />
-                                        </template>
-                                        <template v-if="file.type == 'dir'">
-                                            <Folder
-                                                v-drag-and-drop:folder
-                                                :ref="'folder_' + file.id"
-                                                :file="file"
-                                                :data-key="file.id"
-                                                :multi-selecting="multiSelecting"
-                                                :selected-files="selectedFiles"
-                                                :delete-permission="buttons.delete_folder"
-                                                :rename-permission="buttons.rename_folder"
-                                                class="h-40 folder-item"
-                                                :class="{'loading': loadingInfo}"
-                                                v-on:goToFolderEvent="goToFolder"
-                                                v-on:rename="rename"
-                                                v-on:delete="deleteData"
-                                                v-on:select="select"
-                                            />
-                                        </template>
-                                    </div>
-                                </template>
-                            </template>
+                <div v-else class="px-2 overflow-y-auto files">
+                    <div class="flex flex-wrap -mx-2">
+                        <template v-if="files.error">
+                            <div class="w-full text-lg text-center my-4">
+                                {{ __('You don\'t have permissions to view this folder') }}
+                            </div>
                         </template>
 
-                        <template v-if="view == 'list'">
+                        <template v-if="loading">
+                            <div class="w-full text-lg text-center my-4">
+                                <loading />
+                            </div>
+                        </template>
 
-                            <table class="table custom-table w-full" v-if="files.length > 0">
-                                <thead>
-                                    <tr>
-                                        <th v-if="multiSelecting" class="w-8"></th>
-                                        <th class="w-16">
-                                            {{ __('Type') }}
-                                        </th>
-                                        <th class="text-left">
-                                            {{ __('Name') }}
-                                        </th>
-                                        <th class="text-left">
-                                            {{ __('Size') }}
-                                        </th>
-                                        <th class="text-left">
-                                            {{ __('Last Modification') }}
-                                        </th>
-                                        <th class="text-left">
-                                            {{ __('Options') }}
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                        <template v-else-if="!files.length">
+                            <div class="w-full text-lg text-center my-4">
+                                {{ __(`No ${filter || 'files or folders'} in current directory`) }}<br><br>
+                                <button v-if="buttons.delete_folder && !filter" class="btn btn-default btn-danger" @click="removeDirectory">
+                                    {{ __('Remove directory') }}
+                                </button>
+                            </div>
+                        </template>
 
+                        <template v-if="!files.error">
+                            <template v-if="view == 'grid'">
+                                <template v-if="!files.error">
                                     <template v-if="parent.id">
-
-                                        <Folder
-                                            :ref="'folder_' + parent.id"
-                                            :key="parent.id"
-                                            :file="parent"
-                                            :view="view"
-                                            class="folder-item"
-                                            :class="{'loading': loadingInfo}"
-                                            v-on:goToFolderEvent="goToFolder"
-                                        />
-
+                                        <div :class="filemanagerClass" :key="parent.id" >
+                                            <Folder v-drag-and-drop:folder :ref="'folder_' + parent.id" :file="parent" :data-key="parent.id" class="h-40 folder-item" :class="{'loading': loadingInfo}" v-on:goToFolderEvent="goToFolder" />
+                                        </div>
                                     </template>
 
-
-                                    <template  v-for="file in filteredFiles">
-                                        <template v-if="file.type == 'dir'">
-                                            <Folder :key="file.id"
-                                                    :data-key="file.id"
+                                    <template v-for="file in filteredFiles" :key="file.id">
+                                        <div :class="filemanagerClass">
+                                            <template v-if="file.type == 'file'">
+                                                <ImageLoader
+                                                    v-drag-and-drop:file
+                                                    :ref="'file_' + file.id"
                                                     :file="file"
-                                                    :view="view"
+                                                    :data-key="file.id"
+                                                    :multi-selecting="multiSelecting"
+                                                    :selected-files="selectedFiles"
+                                                    :delete-permission="buttons.delete_file"
+                                                    :rename-permission="buttons.rename_file"
+                                                    class="h-40 file-item"
+                                                    @missing="(value) => missing = value"
+                                                    v-on:showInfo="showInfo"
+                                                    v-on:rename="rename"
+                                                    v-on:delete="deleteData"
+                                                    v-on:select="select"
+                                                />
+                                            </template>
+                                            <template v-if="file.type == 'dir'">
+                                                <Folder
+                                                    v-drag-and-drop:folder
+                                                    :ref="'folder_' + file.id"
+                                                    :file="file"
+                                                    :data-key="file.id"
                                                     :multi-selecting="multiSelecting"
                                                     :selected-files="selectedFiles"
                                                     :delete-permission="buttons.delete_folder"
                                                     :rename-permission="buttons.rename_folder"
-                                                    class="folder-item"
+                                                    class="h-40 folder-item"
                                                     :class="{'loading': loadingInfo}"
                                                     v-on:goToFolderEvent="goToFolder"
                                                     v-on:rename="rename"
                                                     v-on:delete="deleteData"
                                                     v-on:select="select"
-                                            />
-                                        </template>
-                                        <template v-if="file.type == 'file'">
-                                            <ImageLoader
-                                                :key="file.id"
-                                                :data-key="file.id"
-                                                :file="file"
-                                                :view="view"
-                                                :multi-selecting="multiSelecting"
-                                                :selected-files="selectedFiles"
-                                                :delete-permission="buttons.delete_file"
-                                                :rename-permission="buttons.rename_file"
-                                                class="file-item"
-                                                :class="{'loading': loadingInfo}"
-                                                @missing="(value) => missing = value"
-                                                v-on:showInfo="showInfo"
-                                                v-on:rename="rename"
-                                                v-on:delete="deleteData"
-                                                v-on:select="select"
-                                            />
-                                        </template>
+                                                />
+                                            </template>
+                                        </div>
                                     </template>
-                                </tbody>
-                            </table>
+                                </template>
+                            </template>
+
+                            <template v-if="view == 'list'">
+
+                                <table class="table custom-table w-full" v-if="files.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <th v-if="multiSelecting" class="w-8"></th>
+                                            <th class="w-16">
+                                                {{ __('Type') }}
+                                            </th>
+                                            <th class="text-left">
+                                                {{ __('Name') }}
+                                            </th>
+                                            <th class="text-left">
+                                                {{ __('Size') }}
+                                            </th>
+                                            <th class="text-left">
+                                                {{ __('Last Modification') }}
+                                            </th>
+                                            <th class="text-left">
+                                                {{ __('Options') }}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <template v-if="parent.id">
+
+                                            <Folder
+                                                :ref="'folder_' + parent.id"
+                                                :key="parent.id"
+                                                :file="parent"
+                                                :view="view"
+                                                class="folder-item"
+                                                :class="{'loading': loadingInfo}"
+                                                v-on:goToFolderEvent="goToFolder"
+                                            />
+
+                                        </template>
+
+
+                                        <template  v-for="file in filteredFiles" :key="file.id">
+                                            <template v-if="file.type == 'dir'">
+                                                <Folder :key="file.id"
+                                                        :data-key="file.id"
+                                                        :file="file"
+                                                        :view="view"
+                                                        :multi-selecting="multiSelecting"
+                                                        :selected-files="selectedFiles"
+                                                        :delete-permission="buttons.delete_folder"
+                                                        :rename-permission="buttons.rename_folder"
+                                                        class="folder-item"
+                                                        :class="{'loading': loadingInfo}"
+                                                        v-on:goToFolderEvent="goToFolder"
+                                                        v-on:rename="rename"
+                                                        v-on:delete="deleteData"
+                                                        v-on:select="select"
+                                                />
+                                            </template>
+                                            <template v-if="file.type == 'file'">
+                                                <ImageLoader
+                                                    :key="file.id"
+                                                    :data-key="file.id"
+                                                    :file="file"
+                                                    :view="view"
+                                                    :multi-selecting="multiSelecting"
+                                                    :selected-files="selectedFiles"
+                                                    :delete-permission="buttons.delete_file"
+                                                    :rename-permission="buttons.rename_file"
+                                                    class="file-item"
+                                                    :class="{'loading': loadingInfo}"
+                                                    @missing="(value) => missing = value"
+                                                    v-on:showInfo="showInfo"
+                                                    v-on:rename="rename"
+                                                    v-on:delete="deleteData"
+                                                    v-on:select="select"
+                                                />
+                                            </template>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </template>
                         </template>
-                    </template>
+                    </div>
                 </div>
             </div>
         </transition>

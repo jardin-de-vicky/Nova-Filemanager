@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import vue2Dropzone from 'vue2-dropzone';
-import 'vue2-dropzone/dist/vue2Dropzone.min.css';
+import vueDropzone from 'vue2-dropzone-vue3';
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
@@ -35,7 +34,7 @@ export default {
     },
 
     components: {
-        vueDropzone: vue2Dropzone,
+        vueDropzone: vueDropzone,
     },
 
     data: () => ({

@@ -1,10 +1,26 @@
-let mix = require('laravel-mix')
+let mix = require('laravel-mix');
 
-mix.js('resources/js/tool.js', 'dist/js');
+require("./nova.mix");
 
-mix.js('resources/js/field.js', 'dist/js')
-   .webpackConfig({
-        resolve: {
-            symlinks: false
+mix
+    .setPublicPath('dist')
+    .js('resources/js/tool.js', 'js')
+    .js('resources/js/field.js', 'js')
+    .webpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules(?!\/vue2-dropzone-vue3)|bower_components/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                },
+            ]
         }
     })
+    .vue({ version: 3 })
+    .nova('jdv/file-manager');

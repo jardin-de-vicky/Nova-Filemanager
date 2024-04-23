@@ -1,12 +1,3 @@
-<template>
-    <button
-        :class="[ css, stepsComplete? 'confirmation__button--complete' : '' ]"
-        :disabled='stepsComplete'
-        v-on:click='incrementStep()'>
-        {{ currentMessage }}
-    </button>
-</template>
-
 <script>
 export default {
     name: 'confirmation-button',
@@ -60,5 +51,12 @@ export default {
     },
 };
 </script>
-<style>
-</style>
+
+<template>
+    <button
+        :class="[ css, stepsComplete? 'confirmation__button--complete' : '' ]"
+        :disabled='stepsComplete'
+        v-on:click='incrementStep()'>
+        {{ currentMessage }}
+    </button>
+</template>

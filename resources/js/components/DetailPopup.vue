@@ -6,8 +6,6 @@
                 <div class="bg-30 flex flex-wrap border-b border-70">
                     <div class="w-3/4 px-4 py-3 ">
                         {{ __('Preview of') }} <span class="text-primary-70%">{{ info.name }}</span>
-
-
                     </div>
 
                     <div class="w-1/4 flex flex-wrap justify-end">
@@ -17,7 +15,6 @@
 
                 <div class="flex flex-wrap">
                     <div class="w-3/5 box-preview flex justify-center" :class="cssType">
-
                         <template v-if="info.type == 'image'">
                             <ImageInfo :file="info" :preview="true" :css="'card relative w-full flex flex-wrap justify-center items-center overflow-hidden px-0 py-0'"/>
                         </template>

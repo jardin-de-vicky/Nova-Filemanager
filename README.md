@@ -21,13 +21,13 @@ A Filemanager Tool and Field for Laravel Nova
 #### Nova v2 / v3
 
 ```bash
-composer require "infinety-es/nova-filemanager"
+composer require "open-harbor/nova-filemanager"
 ```
 
 #### Nova v1
 
 ```bash
-composer require "infinety-es/nova-filemanager:2.1.*"
+composer require "open-harbor/nova-filemanager*"
 ```
 
 ### Docs
