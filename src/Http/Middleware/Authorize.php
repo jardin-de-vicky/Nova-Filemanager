@@ -1,10 +1,10 @@
 <?php
 
-namespace Infinety\Filemanager\Http\Middleware;
+namespace JardinDeVicky\Filemanager\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Infinety\Filemanager\FilemanagerTool;
+use JardinDeVicky\Filemanager\FilemanagerTool;
 use Symfony\Component\HttpFoundation\Response;
 
 class Authorize

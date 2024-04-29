@@ -1,6 +1,6 @@
 <?php
 
-namespace Infinety\Filemanager\Http\Services;
+namespace JardinDeVicky\Filemanager\Http\Services;
 
 class MimeTypes
 {

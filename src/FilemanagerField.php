@@ -1,10 +1,10 @@
 <?php
 
-namespace Infinety\Filemanager;
+namespace JardinDeVicky\Filemanager;
 
 use Illuminate\Validation\Rule;
-use Infinety\Filemanager\Http\Services\FileManagerService;
-use Infinety\Filemanager\Traits\CoverHelpers;
+use JardinDeVicky\Filemanager\Http\Services\FileManagerService;
+use JardinDeVicky\Filemanager\Traits\CoverHelpers;
 use Laravel\Nova\Contracts\Cover;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;

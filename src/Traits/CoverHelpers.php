@@ -1,6 +1,6 @@
 <?php
 
-namespace Infinety\Filemanager\Traits;
+namespace JardinDeVicky\Filemanager\Traits;
 
 trait CoverHelpers
 {

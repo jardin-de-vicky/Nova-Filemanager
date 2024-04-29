@@ -1,6 +1,6 @@
 <?php
 
-namespace Infinety\Filemanager\Events;
+namespace JardinDeVicky\Filemanager\Events;
 
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Queue\SerializesModels;

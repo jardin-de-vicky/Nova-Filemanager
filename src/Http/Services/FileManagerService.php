@@ -1,16 +1,16 @@
 <?php
 
-namespace Infinety\Filemanager\Http\Services;
+namespace JardinDeVicky\Filemanager\Http\Services;
 
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Infinety\Filemanager\Events\FileRemoved;
-use Infinety\Filemanager\Events\FileUploaded;
-use Infinety\Filemanager\Events\FolderRemoved;
-use Infinety\Filemanager\Events\FolderUploaded;
-use Infinety\Filemanager\Http\Exceptions\InvalidConfig;
+use JardinDeVicky\Filemanager\Events\FileRemoved;
+use JardinDeVicky\Filemanager\Events\FileUploaded;
+use JardinDeVicky\Filemanager\Events\FolderRemoved;
+use JardinDeVicky\Filemanager\Events\FolderUploaded;
+use JardinDeVicky\Filemanager\Http\Exceptions\InvalidConfig;
 use InvalidArgumentException;
 
 class FileManagerService
