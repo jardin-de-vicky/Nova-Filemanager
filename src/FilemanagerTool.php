@@ -2,28 +2,25 @@
 
 namespace JardinDeVicky\Filemanager;
 
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Laravel\Nova\Nova;
-use Laravel\Nova\Tool as BaseTool;
+use Laravel\Nova\Tool;
 
-class FilemanagerTool extends BaseTool
+class FilemanagerTool extends Tool
 {
-    /**
-     * Perform any tasks that need to happen when the tool is booted.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         Nova::script('nova-filemanager', __DIR__.'/../dist/js/tool.js');
     }
 
-    /**
-     * Build the view that renders the navigation links for the tool.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function renderNavigation()
+    public function renderNavigation(): View
     {
         return view('nova-filemanager::navigation');
+    }
+
+    public function menu(Request $request)
+    {
+        return [];
     }
 }
