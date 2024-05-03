@@ -37,11 +37,6 @@
                             </codemirror>
                         </template>
 
-                        <template v-else-if="info.type == 'zip'">
-                            <TreeView v-if="zipLoaded" :json="info.source" :name="info.name">
-                            </TreeView>
-                        </template>
-
                         <!-- <template v-else-if="info.type == 'word'">
                             <iframe :src="'https://view.officeapps.live.com/op/embed.aspx?src='+info.url" width="100%" height="100%" style="border: none;">
                                 <object class="no-preview" v-html="info.image"></object>
@@ -52,7 +47,6 @@
                             <object :data="info.url" type="application/pdf" width="100%" height="100%">
                                 <iframe :src="info.url" width="100%" height="100%" style="border: none;">
                                     <object class="no-preview" v-html="info.image">
-
                                     </object>
                                 </iframe>
                             </object>
@@ -174,7 +168,6 @@
 import api from '../api';
 import ImageInfo from '../modules/Image';
 import ConfirmationButton from './ConfirmationButton';
-import TreeView from './TreeView';
 import { copy } from 'v-copy';
 import Plyr from 'plyr';
 import 'plyr/dist/plyr.css';
@@ -229,7 +222,6 @@ export default {
         ImageInfo: ImageInfo,
         ConfirmationButton: ConfirmationButton,
         codemirror: codemirror,
-        TreeView: TreeView,
     },
 
     directives: {

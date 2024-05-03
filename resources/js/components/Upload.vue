@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import vueDropzone from 'vue2-dropzone-vue3';
+import vueDropzone from 'dropzone-vue3';
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
