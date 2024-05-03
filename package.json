@@ -43,7 +43,7 @@
         "md5": "^2.2.1",
         "plyr": "^3.7.8",
         "urijs": "^1.19.1",
-        "v-copy": "^0.1.0",
+        "v-clipboard3": "^0.1.4",
         "v-viewer": "^3.0.13",
         "viewerjs": "^1.11.6",
         "vue-codemirror": "^4.0.5",
