@@ -5,6 +5,7 @@ namespace JardinDeVicky\Filemanager\Http\Services;
 use Carbon\Carbon;
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use RarArchive;
 use SplFileInfo;
@@ -66,12 +67,12 @@ class NormalizeFile
      */
     private function setExtras(Collection $data)
     {
-        $mime = $this->storage->getMimetype($this->storagePath);
+        $mime = Storage::mimeType($this->storagePath);
 
         // Image
         if (Str::contains($mime, 'image') || $data['ext'] == 'svg') {
             $data->put('type', 'image');
-            $data->put('dimensions', $this->getDimensions($this->storage->getMimetype($this->storagePath)));
+            $data->put('dimensions', $this->getDimensions($mime));
         }
 
         // Video
@@ -198,8 +199,7 @@ class NormalizeFile
         }
 
         //If no type
-
-        return $this->storage->getMimetype($this->storagePath);
+        return Storage::mimeType($this->storagePath);
     }
 
     private function availablesTextExtensions()
