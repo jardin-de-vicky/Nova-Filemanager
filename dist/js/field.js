@@ -33130,6 +33130,7 @@ var _this = undefined;
     UploadProgress: _UploadProgress__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
+    var _this$currentPath;
     return {
       loaded: false,
       loadingfiles: false,
@@ -33138,7 +33139,7 @@ var _this = undefined;
       backupStatusses: [],
       showUpload: false,
       showCreateFolder: false,
-      currentPathFolder: _this.currentPath,
+      currentPathFolder: (_this$currentPath = _this.currentPath) !== null && _this$currentPath !== void 0 ? _this$currentPath : '/',
       files: [],
       parent: {},
       path: [],

@@ -177,7 +177,7 @@ export default {
         backupStatusses: [],
         showUpload: false,
         showCreateFolder: false,
-        currentPathFolder: this.currentPath,
+        currentPathFolder: this.currentPath ?? '/',
         files: [],
         parent: {},
         path: [],
