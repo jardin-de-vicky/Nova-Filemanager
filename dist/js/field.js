@@ -33062,7 +33062,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UploadProgress__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./UploadProgress */ "./resources/js/components/UploadProgress.vue");
 /* harmony import */ var _ConfirmModalDelete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ConfirmModalDelete */ "./resources/js/components/ConfirmModalDelete.vue");
 /* harmony import */ var _RenameModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RenameModal */ "./resources/js/components/RenameModal.vue");
-var _this = undefined;
 
 
 
@@ -33130,7 +33129,6 @@ var _this = undefined;
     UploadProgress: _UploadProgress__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
-    var _this$currentPath;
     return {
       loaded: false,
       loadingfiles: false,
@@ -33139,7 +33137,7 @@ var _this = undefined;
       backupStatusses: [],
       showUpload: false,
       showCreateFolder: false,
-      currentPathFolder: (_this$currentPath = _this.currentPath) !== null && _this$currentPath !== void 0 ? _this$currentPath : '/',
+      currentPathFolder: '/',
       files: [],
       parent: {},
       path: [],
@@ -33163,23 +33161,23 @@ var _this = undefined;
   },
   methods: {
     getData: function getData(folder) {
-      var _this2 = this;
+      var _this = this;
       this.files = [];
       this.parent = {};
       this.path = [];
       this.loadingfiles = true;
       _api__WEBPACK_IMPORTED_MODULE_2__["default"].getDataField(this.resource, this.name, folder, this.filter).then(function (result) {
-        _this2.files = result.files;
-        _this2.path = result.path;
-        _this2.filters = result.filters;
-        if (folder != _this2.defaultFolder) {
-          _this2.parent = result.parent;
+        _this.files = result.files;
+        _this.path = result.path;
+        _this.filters = result.filters;
+        if (folder != _this.defaultFolder) {
+          _this.parent = result.parent;
         }
-        _this2.loadingfiles = false;
+        _this.loadingfiles = false;
       })["catch"](function () {
-        _this2.loadingfiles = false;
-        _this2.filters = [];
-        _this2.$toasted.show(_this2.__('Error reading the folder. Please check your logs'), {
+        _this.loadingfiles = false;
+        _this.filters = [];
+        _this.$toasted.show(_this.__('Error reading the folder. Please check your logs'), {
           type: 'error'
         });
       });
