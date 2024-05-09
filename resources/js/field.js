@@ -1,10 +1,10 @@
-import IndexField from './field/IndexField.vue';
-import DetailField from './field/DetailField.vue';
-import FormField from './field/FormField.vue';
+import IndexField from './field/IndexField';
+import DetailField from './field/DetailField';
+import FormField from './field/FormField';
 import VueViewer from 'v-viewer';
 import Clipboard from 'v-clipboard3';
 
-Nova.booting((app) => {
+Nova.booting((app, store) => {
     app.use(VueViewer);
     app.use(Clipboard) ;
     app.component('index-filemanager-field', IndexField);

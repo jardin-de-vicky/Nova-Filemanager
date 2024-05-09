@@ -34204,6 +34204,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['resourceName', 'field'],
+  computed: {
+    fieldValue: function fieldValue() {
+      return this.field.displayedAs || this.field.value;
+    }
+  },
   data: function data() {
     return {
       display: 'normal'
@@ -36218,8 +36223,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_file_select = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("file-select");
   var _component_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("icon");
   var _component_confirm_modal_remove_file = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("confirm-modal-remove-file");
-  var _component_default_field = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("default-field");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_default_field, {
+  var _component_DefaultField = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DefaultField");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_DefaultField, {
     field: $props.field
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -36327,7 +36332,7 @@ var _hoisted_4 = {
   "class": "pl-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_ctx.display == 'normal' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.field.value), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_ctx.display == 'normal' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.fieldValue), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
   }, [$props.field.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 0
@@ -79148,9 +79153,9 @@ var __webpack_exports__ = {};
   !*** ./resources/js/field.js ***!
   \*******************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _field_IndexField_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./field/IndexField.vue */ "./resources/js/field/IndexField.vue");
-/* harmony import */ var _field_DetailField_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./field/DetailField.vue */ "./resources/js/field/DetailField.vue");
-/* harmony import */ var _field_FormField_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./field/FormField.vue */ "./resources/js/field/FormField.vue");
+/* harmony import */ var _field_IndexField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./field/IndexField */ "./resources/js/field/IndexField.vue");
+/* harmony import */ var _field_DetailField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./field/DetailField */ "./resources/js/field/DetailField.vue");
+/* harmony import */ var _field_FormField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./field/FormField */ "./resources/js/field/FormField.vue");
 /* harmony import */ var v_viewer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! v-viewer */ "./node_modules/v-viewer/dist/index.mjs");
 /* harmony import */ var v_clipboard3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! v-clipboard3 */ "./node_modules/v-clipboard3/dist/v-clipboard3.min.js");
 
@@ -79158,12 +79163,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Nova.booting(function (app) {
+Nova.booting(function (app, store) {
   app.use(v_viewer__WEBPACK_IMPORTED_MODULE_3__["default"]);
   app.use(v_clipboard3__WEBPACK_IMPORTED_MODULE_4__["default"]);
-  app.component('index-filemanager-field', _field_IndexField_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  app.component('detail-filemanager-field', _field_DetailField_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  app.component('form-filemanager-field', _field_FormField_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  app.component('index-filemanager-field', _field_IndexField__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  app.component('detail-filemanager-field', _field_DetailField__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  app.component('form-filemanager-field', _field_FormField__WEBPACK_IMPORTED_MODULE_2__["default"]);
 });
 })();
 

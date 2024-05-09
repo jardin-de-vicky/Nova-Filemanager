@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field">
+    <DefaultField :field="field">
         <template slot="field">
 
             <template v-if="field.value && field.display == 'image'">
@@ -69,7 +69,7 @@
                 {{ firstError }}
             </p>
         </template>
-    </default-field>
+    </DefaultField>
 </template>
 
 <script>

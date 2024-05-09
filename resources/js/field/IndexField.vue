@@ -1,7 +1,7 @@
-<template>
+2<template>
     <div>
         <template v-if="display == 'normal'">
-            <span >{{ field.value }}</span>
+            <span >{{ fieldValue }}</span>
         </template>
         <template v-else>
             <template v-if="field.image">
@@ -23,6 +23,11 @@
 <script>
 export default {
     props: ['resourceName', 'field'],
+    computed: {
+        fieldValue() {
+            return this.field.displayedAs || this.field.value
+        },
+    },
     data: () => ({
         display: 'normal',
     }),
