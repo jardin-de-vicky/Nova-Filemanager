@@ -42,18 +42,18 @@
     ],
     "autoload": {
         "psr-4": {
-            "JardinDeVicky\\Filemanager\\": "src/"
+            "JardinDeVicky\\Nova-Filemanager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JardinDeVicky\\Filemanager\\Tests\\": "tests"
+            "JardinDeVicky\\Nova-Filemanager\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JardinDeVicky\\Filemanager\\FilemanagerServiceProvider"
+                "JardinDeVicky\\Nova-Filemanager\\FilemanagerServiceProvider"
             ]
         }
     },
