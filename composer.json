@@ -1,6 +1,6 @@
 {
     "name": "jardin-de-vicky/nova-filemanager",
-    "description": "Filemanager tool for Laravel Nova 4",
+    "description": "File Manager tool for Laravel Nova 4",
     "keywords": [
         "laravel",
         "nova",
@@ -42,12 +42,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "JardinDeVicky\\Nova-Filemanager\\": "src/"
+            "JardinDeVicky\\NovaFilemanager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JardinDeVicky\\Nova-Filemanager\\Tests\\": "tests"
+            "JardinDeVicky\\NovaFilemanager\\Tests\\": "tests"
         }
     },
     "extra": {
