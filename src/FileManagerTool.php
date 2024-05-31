@@ -1,13 +1,13 @@
 <?php
 
-namespace JardinDeVicky\Filemanager;
+namespace JardinDeVicky\NovaFileManager;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
-class FilemanagerTool extends Tool
+class FileManagerTool extends Tool
 {
     public function boot(): void
     {

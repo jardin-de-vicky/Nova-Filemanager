@@ -53,7 +53,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JardinDeVicky\\Nova-Filemanager\\FilemanagerServiceProvider"
+                "JardinDeVicky\\NovaFileManager\\FileManagerServiceProvider"
             ]
         }
     },

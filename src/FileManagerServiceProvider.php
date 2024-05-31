@@ -1,6 +1,6 @@
 <?php
 
-namespace JardinDeVicky\Filemanager;
+namespace JardinDeVicky\NovaFileManager;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -8,7 +8,7 @@ use JardinDeVicky\Filemanager\Http\Middleware\Authorize;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 
-class FilemanagerServiceProvider extends ServiceProvider
+class FileManagerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
