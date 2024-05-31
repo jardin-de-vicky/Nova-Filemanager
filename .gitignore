@@ -8,3 +8,5 @@ phpunit.xml
 mix-manifest.json
 
 .env
+
+.idea/
