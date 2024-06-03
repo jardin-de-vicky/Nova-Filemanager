@@ -18,7 +18,7 @@ class FileManagerField extends Field implements Cover
      *
      * @var string
      */
-    public $component = 'filemanager-field';
+    public $component = 'file-manager-field';
 
     /**
      * The validation rules for upload files.
