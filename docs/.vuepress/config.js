@@ -1,7 +1,7 @@
 module.exports = {
-  title: 'Nova Filemanager',
-  description: 'Documentation for Filemanager Tool and Field for Laravel Nova',
-  base: '/Nova-Filemanager/',
+  title: 'Nova File Manager',
+  description: 'Documentation for File Manager Tool and Field for Laravel Nova',
+  base: '/NovaFileManager/',
   serviceWorker: true,
   toc: { includeLevel: [1, 2] },
   themeConfig: {

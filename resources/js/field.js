@@ -7,7 +7,7 @@ import Clipboard from 'v-clipboard3';
 Nova.booting((app, store) => {
     app.use(VueViewer);
     app.use(Clipboard) ;
-    app.component('index-filemanager-field', IndexField);
-    app.component('detail-filemanager-field', DetailField);
-    app.component('form-filemanager-field', FormField);
+    app.component('index-file-manager-field', IndexField);
+    app.component('detail-file-manager-field', DetailField);
+    app.component('form-file-manager-field', FormField);
 });

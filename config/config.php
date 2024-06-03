@@ -102,7 +102,7 @@ return [
     |--------------------------------------------------------------------------
     | Resolve the upload file name with a class that extends
      */
-    'naming'    => JardinDeVicky\Filemanager\Http\Services\DefaultNamingStrategy::class,
+    'naming'    => JardinDeVicky\NovaFileManager\Http\Services\DefaultNamingStrategy::class,
 
     /*
     |--------------------------------------------------------------------------

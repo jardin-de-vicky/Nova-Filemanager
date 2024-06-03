@@ -1,3 +1,3 @@
 Nova.booting((app) => {
-    app.inertia('NovaFilemanager', require('./components/Tool').default);
+    app.inertia('NovaFileManager', require('./components/Tool').default);
 });
