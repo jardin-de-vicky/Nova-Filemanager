@@ -107,7 +107,7 @@ export default {
         if (this.preview) {
             this.images.push(this.file.image);
         } else {
-            window.axios.get(this.file.image, {
+            Nova.request().get(this.file.image, {
                 responseType: 'blob',
             })
             .then(({ headers, data }) => {

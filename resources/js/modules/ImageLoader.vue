@@ -188,7 +188,7 @@ export default {
 
     mounted() {
         if (this.file.mime == 'image') {
-            window.axios.get(this.file.thumb, {
+            Nova.request().get(this.file.thumb, {
                 responseType: 'blob',
             })
             .then(({ headers, data }) => {

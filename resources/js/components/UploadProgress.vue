@@ -143,7 +143,7 @@ export default {
         },
 
         uploadFileToServer(file, data, config) {
-            window.axios
+            Nova.request()
                 .post('/nova-vendor/infinety-es/nova-filemanager/uploads/add', data, config)
                 .then(response => {
                     if (response.data.success == true) {
@@ -194,7 +194,7 @@ export default {
         uploadFolderToServer(file, data, config) {
             data.append('folder', true);
 
-            window.axios
+            Nova.request()
                 .post('/nova-vendor/infinety-es/nova-filemanager/uploads/add', data, config)
                 .then(response => {
                     if (response.data.success == true) {
