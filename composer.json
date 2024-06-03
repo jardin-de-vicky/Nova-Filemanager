@@ -42,12 +42,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "JardinDeVicky\\NovaFilemanager\\": "src/"
+            "JardinDeVicky\\NovaFileManager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JardinDeVicky\\NovaFilemanager\\Tests\\": "tests"
+            "JardinDeVicky\\NovaFileManager\\Tests\\": "tests"
         }
     },
     "extra": {
