@@ -1,7 +1,6 @@
 <template>
     <DefaultField :field="field">
-        <template slot="field">
-
+        <template #field>
             <template v-if="field.value && field.display == 'image'">
                 <div class="card relative card relative border-lg border-50 overflow-hidden px-0 py-0 max-w-xs mb-2">
                     <template v-if="field.type == 'image'">
