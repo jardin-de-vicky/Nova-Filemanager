@@ -3,8 +3,8 @@
 namespace JardinDeVicky\NovaFileManager;
 
 use Illuminate\Validation\Rule;
-use JardinDeVicky\Filemanager\Http\Services\FileManagerService;
-use JardinDeVicky\Filemanager\Traits\CoverHelpers;
+use JardinDeVicky\NovaFileManager\Http\Services\FileManagerService;
+use JardinDeVicky\NovaFileManager\Traits\CoverHelpers;
 use Laravel\Nova\Contracts\Cover;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;

@@ -1,6 +1,6 @@
 <?php
 
-namespace JardinDeVicky\Filemanager\Events;
+namespace JardinDeVicky\NovaFileManager\Events;
 
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Queue\SerializesModels;

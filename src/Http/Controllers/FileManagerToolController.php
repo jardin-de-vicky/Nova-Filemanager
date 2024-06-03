@@ -1,13 +1,13 @@
 <?php
 
-namespace JardinDeVicky\Filemanager\Http\Controllers;
+namespace JardinDeVicky\NovaFileManager\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use JardinDeVicky\Filemanager\Http\Services\FileManagerService;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class FilemanagerToolController extends Controller
+class FileManagerToolController extends Controller
 {
     /**
      * @var mixed

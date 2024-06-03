@@ -1,6 +1,6 @@
 <?php
 
-namespace JardinDeVicky\Filemanager\Http\Services;
+namespace JardinDeVicky\NovaFileManager\Http\Services;
 
 class MimeTypes
 {

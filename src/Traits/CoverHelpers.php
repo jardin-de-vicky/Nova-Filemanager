@@ -1,6 +1,6 @@
 <?php
 
-namespace JardinDeVicky\Filemanager\Traits;
+namespace JardinDeVicky\NovaFileManager\Traits;
 
 trait CoverHelpers
 {
