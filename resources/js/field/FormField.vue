@@ -1,5 +1,9 @@
 <template>
-    <DefaultField :field="field">
+    <DefaultField
+        :field="field"
+        :errors="errors"
+        :show-help-text="showHelpText"
+        :full-width-content="fullWidthContent">
         <template #field>
             <template v-if="field.value && field.display == 'image'">
                 <div class="card relative card relative border-lg border-50 overflow-hidden px-0 py-0 max-w-xs mb-2">
