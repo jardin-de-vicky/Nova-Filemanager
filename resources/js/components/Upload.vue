@@ -40,7 +40,7 @@ export default {
     data: () => ({
         token: token.content,
         dropzoneOptions: {
-            url: '/nova-vendor/infinety-es/nova-filemanager/uploads/add',
+            url: '/nova-vendor/jardin-de-vicky/nova-filemanager/uploads/add',
             thumbnailWidth: 200,
             addRemoveLinks: true,
             dictDefaultMessage:
