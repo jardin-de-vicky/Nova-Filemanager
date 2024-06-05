@@ -6,7 +6,7 @@ use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use JardinDeVicky\Filemanager\Events\FileRemoved;
+use JardinDeVicky\NovaFileManager\Events\FileRemoved;
 use JardinDeVicky\NovaFileManager\Events\FileUploaded;
 use JardinDeVicky\NovaFileManager\Events\FolderRemoved;
 use JardinDeVicky\NovaFileManager\Events\FolderUploaded;
