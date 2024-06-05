@@ -139,7 +139,7 @@ class FileManagerField extends Field implements Cover
      */
     public function filterBy($filter)
     {
-        $defaultFilters = config('filemanager.filters', []);
+        $defaultFilters = config('file-manager.filters', []);
 
         if (count($defaultFilters) > 0) {
             $filters = array_change_key_case($defaultFilters);

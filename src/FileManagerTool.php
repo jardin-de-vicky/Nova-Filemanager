@@ -11,12 +11,12 @@ class FileManagerTool extends Tool
 {
     public function boot(): void
     {
-        Nova::script('nova-filemanager', __DIR__.'/../dist/js/tool.js');
+        Nova::script('nova-file-manager', __DIR__.'/../dist/js/tool.js');
     }
 
     public function renderNavigation(): View
     {
-        return view('nova-filemanager::navigation');
+        return view('nova-file-manager::navigation');
     }
 
     public function menu(Request $request)

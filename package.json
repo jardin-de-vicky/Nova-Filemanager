@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "composer": "node -r dotenv/config ./composer-script.js docker build --build-arg NOVA_USER=\"NOVA_USER\" --build-arg NOVA_LICENSE=\"$NOVA_LICENSE\" -t nova-filemanager-composer . && docker run -v /vendor:/app/vendor -it --name nova-filemanager nova-filemanager-composer",
+        "composer": "node -r dotenv/config ./composer-script.js docker build --build-arg NOVA_USER=\"NOVA_USER\" --build-arg NOVA_LICENSE=\"$NOVA_LICENSE\" -t nova-file-manager-composer . && docker run -v /vendor:/app/vendor -it --name nova-fil-emanager nova-file-manager-composer",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",

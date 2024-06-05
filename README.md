@@ -15,7 +15,7 @@ A Filemanager Tool and Field for Laravel Nova
 #### Nova v4
 
 ```bash
-composer require "jardin-de-vicky/nova-filemanager"
+composer require "jardin-de-vicky/nova-file-manager"
 ```
 
 ### Testing

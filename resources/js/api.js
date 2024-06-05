@@ -1,7 +1,7 @@
 export default {
     getData(folder) {
         return Nova.request()
-            .get('/nova-vendor/jardin-de-vicky/nova-filemanager/data', {
+            .get('/nova-vendor/jardin-de-vicky/nova-file-manager/data', {
                 params: {
                     folder,
                 },
@@ -11,7 +11,7 @@ export default {
 
     getDataField(resource, attribute, folder, filter) {
         return Nova.request()
-            .get(`/nova-vendor/jardin-de-vicky/nova-filemanager/${resource}/${attribute}/data`, {
+            .get(`/nova-vendor/jardin-de-vicky/nova-file-manager/${resource}/${attribute}/data`, {
                 params: {
                     folder,
                     filter,
@@ -22,13 +22,13 @@ export default {
 
     uploadFile() {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/uploads/add')
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/uploads/add')
             .then(response => response.data);
     },
 
     moveFile(oldPath, newPath) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/move', {
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/move', {
                 old: oldPath,
                 path: newPath,
             })
@@ -37,7 +37,7 @@ export default {
 
     createFolder(folderName, currentFolder) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/create-folder', {
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/create-folder', {
                 folder: folderName,
                 current: currentFolder,
             })
@@ -46,7 +46,7 @@ export default {
 
     removeDirectory(currentFolder) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/delete-folder', {
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/delete-folder', {
                 current: currentFolder,
             })
             .then(response => response.data);
@@ -54,19 +54,19 @@ export default {
 
     getInfo(file) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/get-info', { file: file })
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/get-info', { file: file })
             .then(response => response.data);
     },
 
     removeFile(file) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/remove-file', { file: file })
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/remove-file', { file: file })
             .then(response => response.data);
     },
 
     renameFile(file, name) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/rename-file', {
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/rename-file', {
                 file: file,
                 name: name,
             })
@@ -75,7 +75,7 @@ export default {
 
     rename(path, name) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/actions/rename', {
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/actions/rename', {
                 path: path,
                 name: name,
             })
@@ -84,7 +84,7 @@ export default {
 
     eventFolderUploaded(path) {
         return Nova.request()
-            .post('/nova-vendor/jardin-de-vicky/nova-filemanager/events/folder', { path: path })
+            .post('/nova-vendor/jardin-de-vicky/nova-file-manager/events/folder', { path: path })
             .then(response => response.data);
     },
 };

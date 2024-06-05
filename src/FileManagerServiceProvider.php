@@ -18,18 +18,18 @@ class FileManagerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('filemanager.php'),
-        ], 'filemanager-config');
+            __DIR__.'/../config/config.php' => config_path('nova-file-manager.php'),
+        ], 'nova-file-manager-config');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-filemanager');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-file-manager');
 
         $this->app->booted(function () {
             $this->routes();
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('filemanager-field', __DIR__.'/../dist/js/field.js');
-            // Nova::style('filemanager-field', __DIR__.'/../dist/css/field.css');
+            Nova::script('file-manager-field', __DIR__.'/../dist/js/field.js');
+            // Nova::style('file-manager-field', __DIR__.'/../dist/css/field.css');
         });
     }
 
@@ -45,8 +45,8 @@ class FileManagerServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-            ->namespace('JardinDeVicky\Filemanager\Http\Controllers')
-            ->prefix('nova-vendor/jardin-de-vicky/nova-filemanager')
+            ->namespace('JardinDeVicky\NovaFileManager\Http\Controllers')
+            ->prefix('nova-vendor/jardin-de-vicky/nova-file-manager')
             ->group(__DIR__.'/../routes/api.php');
     }
 

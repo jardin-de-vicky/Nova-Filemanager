@@ -6,13 +6,13 @@
 You can install the package in any Laravel app that uses [Nova](https://nova.laravel.com) via Composer:
 
 ```bash
-composer require jardin-de-vicky/nova-filemanager
+composer require jardin-de-vicky/nova-file-manager
 ```
 
 Next, publish config file: 
 
 ```bash
-php artisan vendor:publish --tag=filemanager-config
+php artisan vendor:publish --tag=nova-file-manager-config
 ```
 
 Also, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
@@ -26,7 +26,7 @@ public function tools()
 {
     return [
         // ...
-        new \Infinety\Filemanager\FilemanagerTool(),
+        new \JardinDeVicky\NovaFileManager\FilemanagerTool(),
     ];
 }
 ```
@@ -120,6 +120,6 @@ return [
     | Resolve the upload file name with a class that extends
     | Infinety\Filemanager\Http\Services\AbstractNamingStrategy
      */
-    'naming'    => Infinety\Filemanager\Http\Services\DefaultNamingStrategy::class,
+    'naming'    => JardinDeVicky\NovaFileManager\Http\Services\DefaultNamingStrategy::class,
 ];
 ```

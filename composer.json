@@ -1,10 +1,10 @@
 {
-    "name": "jardin-de-vicky/nova-filemanager",
+    "name": "jardin-de-vicky/nova-file-manager",
     "description": "File Manager tool for Laravel Nova 4",
     "keywords": [
         "laravel",
         "nova",
-        "filemanager"
+        "file-manager"
     ],
     "homepage": "https://github.com/jardin-de-vicky/nova-filemanager",
     "license": "MIT",

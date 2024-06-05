@@ -1,5 +1,5 @@
 # Changelog
-All notable changes to `nova-filemanager` will be documented in this file
+All notable changes to `nova-file-manager` will be documented in this file
 
 ## v3.0
 
