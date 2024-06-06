@@ -267,7 +267,7 @@ export default {
 
         viewAs(type) {
             this.view = type;
-            localStorage.setItem('nova-filemanager-view', type);
+            localStorage.setItem('nova-file-manager-view', type);
         },
 
         setFileValue(file) {
@@ -335,13 +335,13 @@ export default {
     },
 
     created() {
-        if (localStorage.getItem('nova-filemanager-view')) {
-            const view = localStorage.getItem('nova-filemanager-view');
+        if (localStorage.getItem('nova-file-manager-view')) {
+            const view = localStorage.getItem('nova-file-manager-view');
 
             if (['grid', 'list'].includes(view)) {
                 this.view = view;
             } else {
-                localStorage.setItem('nova-filemanager-view', 'grid');
+                localStorage.setItem('nova-file-manager-view', 'grid');
             }
         }
     },

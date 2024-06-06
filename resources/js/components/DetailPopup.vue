@@ -125,7 +125,7 @@
                                     <a
                                         v-if="buttons.download_file"
                                         class="bg-50 py-1 rounded-l text-xs text-grey-500 h-9 px-2 text-90 no-underline"
-                                        :href="`/nova-vendor/jardin-de-vicky/nova-filemanager/actions/download-file?file=${this.info.path}`"
+                                        :href="`/nova-vendor/jardin-de-vicky/nova-file-manager/actions/download-file?file=${this.info.path}`"
                                         target="_blank"
                                     >
                                         Download

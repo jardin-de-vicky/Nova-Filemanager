@@ -167,12 +167,12 @@ export default {
             this.currentPath = params.path;
         }
 
-        if (localStorage.getItem('nova-filemanager-view')) {
-            let viewS = localStorage.getItem('nova-filemanager-view');
+        if (localStorage.getItem('nova-file-manager-view')) {
+            let viewS = localStorage.getItem('nova-file-manager-view');
             if (['grid', 'list'].includes(viewS)) {
                 this.view = viewS;
             } else {
-                localStorage.setItem('nova-filemanager-view', 'grid');
+                localStorage.setItem('nova-file-manager-view', 'grid');
             }
         }
 
@@ -268,7 +268,7 @@ export default {
 
         viewAs(type) {
             this.view = type;
-            localStorage.setItem('nova-filemanager-view', type);
+            localStorage.setItem('nova-file-manager-view', type);
         },
 
         uploadFiles(files, type, firstFolderName) {
