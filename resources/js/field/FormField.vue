@@ -128,6 +128,7 @@ export default {
 
     methods: {
         openModalCreateFolder() {
+            console.log('is modal being opened?');
             this.showCreateFolder = true;
         },
         closeModalCreateFolder() {
