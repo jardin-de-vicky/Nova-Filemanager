@@ -1,4 +1,5 @@
 <template>
+    <button @click="test">TEST</button>
     <div class="flex flex-wrap items-stretch w-full mb-2 relative">
         <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 form-control form-input form-input-bordered-l relative" 
                :placeholder="__('Select a file')" :value="value" :disabled="isReadonly" @input="updateValue($event.target.value)">
@@ -13,6 +14,10 @@ export default {
     props: ['value', 'field', 'isReadonly'],
 
     methods: {
+        test(){
+            console.log('this is a test');
+        },
+
         openModalFileManager() {
             console.log('attempt to open modal');
             this.$emit('open-modal');
