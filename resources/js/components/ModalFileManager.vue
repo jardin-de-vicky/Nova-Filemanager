@@ -1,9 +1,10 @@
 <template>
+    <h2 v-if="active">I work!</h2>
+
     <portal to="modals" name="Modal FileManager" transition="fade-transition">
         Active Value: {{ active }}
 
         <div v-if="active">
-
             <portal-target name="portal-filemanager">
 
             </portal-target>
@@ -27,7 +28,7 @@
                                     <div @click="showUpload = !showUpload" class="btn btn-default btn-primary mr-3">
                                         {{ __('Upload') }}
                                     </div>
-                                    <input type="file" multiple="true" @change="uploadFilesByButton"/>
+                                    <input type="file" multiple @change="uploadFilesByButton"/>
                                 </label>
 
                                 <button  v-if="buttons.create_folder" @click="showModalCreateFolder" class="btn btn-default btn-primary mr-3">
@@ -174,6 +175,7 @@ export default {
     data: () => ({
         loaded: false,
         loadingfiles: false,
+        active: false,
         activeDisk: null,
         activeDiskBackups: [],
         backupStatusses: [],
