@@ -28,11 +28,11 @@
                 :defaultFolder="defaultFolder"
                 :filter="field.filterBy"
                 :buttons="field.buttons"
-                v-on:open-modal="openModalCreateFolder"
-                v-on:close-modal="closeFilemanagerModal"
-                v-on:update-current-path="updateCurrentPath"
-                v-on:showInfoItem="showInfoItem"
-                v-on:uploadFiles="uploadFiles"
+                @open-modal="openModalCreateFolder"
+                @close-modal="closeFilemanagerModal"
+                @update-current-path="updateCurrentPath"
+                @showInfoItem="showInfoItem"
+                @uploadFiles="uploadFiles"
                 :value="value"
             />
 
@@ -42,10 +42,10 @@
                 :active="activeInfo"
                 :popup="true"
                 :buttons="field.buttons"
-                v-on:closePreview="closePreview"
-                v-on:refresh="refreshCurrent"
-                v-on:selectFile="setValue"
-                v-on:rename="fileRenamed"
+                @closePreview="closePreview"
+                @refresh="refreshCurrent"
+                @selectFile="setValue"
+                @rename="fileRenamed"
             />
 
             <create-folder ref="createFolderModal" :active="showCreateFolder" :current="currentPath" v-on:closeCreateFolderModal="closeModalCreateFolder" v-on:refresh="refreshCurrent" />
