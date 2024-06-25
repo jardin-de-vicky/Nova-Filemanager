@@ -20,7 +20,7 @@ export default {
 
         openModalFileManager() {
             console.log('attempt to open modal');
-            this.$emit('open-modal');
+            this.$emit('openModal');
         },
 
         updateValue(newValue) {

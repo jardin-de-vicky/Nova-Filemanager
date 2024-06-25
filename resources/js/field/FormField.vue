@@ -18,8 +18,8 @@
                 </div>
             </template>
 
-            <modal-filemanager
-                ref="filemanager"
+            <modal-file-manager
+                ref="fileManager"
                 :resource="resourceName"
                 :name="field.attribute"
                 :home="field.home"
@@ -28,7 +28,7 @@
                 :defaultFolder="defaultFolder"
                 :filter="field.filterBy"
                 :buttons="field.buttons"
-                @open-modal="openModalCreateFolder"
+                @openModal="handleOpenModal"
                 @close-modal="closeFilemanagerModal"
                 @update-current-path="updateCurrentPath"
                 @showInfoItem="showInfoItem"
@@ -97,7 +97,7 @@ export default {
 
     components: {
         'file-select': FileSelect,
-        'modal-filemanager': ModalFileManager,
+        'modal-file-manager': ModalFileManager,
         'create-folder': CreateFolderModal,
         DetailPopup: DetailPopup,
         UploadProgress: UploadProgress,
@@ -127,7 +127,7 @@ export default {
     }),
 
     methods: {
-        openModalCreateFolder() {
+        handleOpenModal() {
             console.log('is modal being opened?');
             this.showCreateFolder = true;
         },
@@ -136,7 +136,7 @@ export default {
         },
 
         refreshCurrent() {
-            this.$refs.filemanager.getData(this.currentPath);
+            this.$refs.fileManager.getData(this.currentPath);
         },
 
         openFilemanagerModal() {
