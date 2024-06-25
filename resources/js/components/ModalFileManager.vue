@@ -1,5 +1,7 @@
 <template>
     <portal to="modals" name="Modal FileManager" transition="fade-transition">
+        Active Value: {{ active }}
+
         <modal v-if="active">
 
             <portal-target name="portal-filemanager">
