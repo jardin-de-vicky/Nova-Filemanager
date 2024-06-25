@@ -2,7 +2,7 @@
     <portal to="modals" name="Modal FileManager" transition="fade-transition">
         Active Value: {{ active }}
 
-        <modal v-if="active">
+        <div v-if="active">
 
             <portal-target name="portal-filemanager">
 
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </div>
-        </modal>
+        </div>
     </portal>
 </template>
 
