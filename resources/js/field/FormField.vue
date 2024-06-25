@@ -28,7 +28,7 @@
                 :defaultFolder="defaultFolder"
                 :filter="field.filterBy"
                 :buttons="field.buttons"
-                @openModal="handleOpenModal"
+                @openModal="openCreateFolderModal"
                 @close-modal="closeFilemanagerModal"
                 @update-current-path="updateCurrentPath"
                 @showInfoItem="showInfoItem"
@@ -127,7 +127,7 @@ export default {
     }),
 
     methods: {
-        handleOpenModal() {
+        openCreateFolderModal() {
             console.log('is modal being opened?');
             this.showCreateFolder = true;
         },
@@ -140,6 +140,7 @@ export default {
         },
 
         openFileManagerModal() {
+            console.log("Test");
             this.setCurrentPath();
             this.openModal = true;
         },
