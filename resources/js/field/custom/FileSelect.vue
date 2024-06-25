@@ -1,10 +1,9 @@
 <template>
     <div class="flex flex-wrap items-stretch w-full mb-2 relative">
-        <button class="btn btn-primary" @click="test">TEST</button>
         <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 form-control form-input form-input-bordered-l relative"
                :placeholder="__('Select a file')" :value="value" :disabled="isReadonly" @input="updateValue($event.target.value)">
         <div class="flex -mr-px">
-            <span class="filemanager-open flex items-center leading-normal rounded-lg rounded-l-none border border-l-0 border-grey-light bg-40 px-3 whitespace-no-wrap text-grey-dark text-sm cursor-pointer" @click="openModalFileManager">{{ __('Open FileManager') }}</span>
+            <span class="filemanager-open flex items-center leading-normal rounded-lg rounded-l-none border border-l-0 border-grey-light bg-40 px-3 whitespace-no-wrap text-grey-dark text-sm cursor-pointer" @click="openFileManagerModal">{{ __('Open FileManager') }}</span>
         </div>  
     </div>  
 </template>
@@ -14,11 +13,7 @@ export default {
     props: ['value', 'field', 'isReadonly'],
 
     methods: {
-        test(){
-            console.log('this is a test');
-        },
-
-        openModalFileManager() {
+        openFileManagerModal() {
             console.log('attempt to open modal');
             this.$emit('openModal');
         },

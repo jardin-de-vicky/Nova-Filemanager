@@ -18,7 +18,7 @@
                 </div>
             </template>
 
-            <modal-file-manager
+            <ModalFileManager
                 ref="fileManager"
                 :resource="resourceName"
                 :name="field.attribute"
@@ -34,7 +34,7 @@
                 @showInfoItem="showInfoItem"
                 @uploadFiles="uploadFiles"
                 :value="value"
-            />
+            ></ModalFileManager>
 
             <DetailPopup
                 ref="detailPopup"
@@ -78,7 +78,7 @@
 <script>
 import { FormField, HandlesValidationErrors } from 'laravel-nova';
 import FileSelect from './custom/FileSelect';
-import ModalFileManager from '../components/ModalFileManager';
+import ModalFileManager from '../components/ModalFileManager.vue';
 import CreateFolderModal from '../components/CreateFolderModal';
 import DetailPopup from '../components/DetailPopup';
 import UploadProgress from '../components/UploadProgress';
@@ -97,7 +97,7 @@ export default {
 
     components: {
         'file-select': FileSelect,
-        'modal-file-manager': ModalFileManager,
+        ModalFileManager,
         'create-folder': CreateFolderModal,
         DetailPopup: DetailPopup,
         UploadProgress: UploadProgress,
